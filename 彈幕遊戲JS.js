@@ -119,7 +119,7 @@ function next(){
 		now_text = 0
 		//使用setInterval(函數，時間(毫秒))函數在對話後每[attack_speed]秒後重複執行attack()函數
 		setTimeout(battle,attack_speed)
-		let Detection = setInterval(impact,1);
+		let Detection = setInterval(impact,10);
 		setInterval(()=>{clearInterval(Detection)},8500);
 	}
 }
