@@ -280,7 +280,7 @@ function impact(){
 }
 
 function win(){
-	window.location.href="win.html";
+	window.location.href="戰勝/戰勝HTML.html";
 }
 
 //網頁開啟時便開始打字
