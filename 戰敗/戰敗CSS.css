@@ -1,0 +1,110 @@
+body{
+	background-color: #1a1a1a;
+	color: #ffffff;
+	font-family: Arial;
+	display: flex;
+	/*將主軸設為垂直*/
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	margin: 0;
+}
+h1{
+	font-size: 4em;
+	border-right: 0.1em solid white;
+	/*控制不換行*/
+	white-space: nowrap;
+	/*隱藏還未打到的文字*/
+	overflow: hidden;
+	margin: 0 auto;
+	/*啟動動畫point_text，動畫時間為0.75秒，且只出現開始與結尾，又無限重複*/
+	animation: point-text 0.75s step-end infinite;
+}
+/*開始與結為右邊的小棒子皆為透明，中間時為白色*/
+@keyframes point-text{
+	from,to{border-color: transparent;}
+	50%{border-color: white;}
+}
+
+#LOVE {
+	width: 200px;
+	height: 200px;	
+	background-image: url('../照片/愛心.png');
+	background-repeat: no-repeat; 
+	background-size: contain; 
+	background-position: center; 
+	animation: shock 1s linear forwards,split 0.1s step-end 1.5s forwards;
+}	
+
+@keyframes shock {
+	0%   { transform: translate(0,0); }
+	5%  { transform: translate(-10px,10px); }
+	10%  { transform: translate(-10px,-10px); }
+	15%  { transform: translate(10px,-10px); }
+	20%  { transform: translate(10px,10px); }
+	25%  { transform: translate(0,0); }
+	30%  { transform: translate(-10px,10px); }
+	35%  { transform: translate(-10px,-10px); }
+	40%  { transform: translate(10px,-10px); }
+	45%  { transform: translate(10px,10px); }
+	50%   { transform: translate(0,0); }
+	55%  { transform: translate(-10px,10px); }
+	60%  { transform: translate(-10px,-10px); }
+	65%  { transform: translate(10px,-10px); }
+	70%  { transform: translate(10px,10px); }
+	75%  { transform: translate(0,0); }
+	80%  { transform: translate(-10px,10px); }
+	85%  { transform: translate(-10px,-10px); }
+	95%  { transform: translate(10px,-10px); }
+	100%   { transform: translate(0,0); }
+	}
+
+@keyframes split{
+	from{background-image: url('../照片/愛心.png');}
+	to{background-image: url('../照片/戰敗愛心.png');}
+	}
+
+
+button{
+		animation: button_flash 2s linear infinite;
+       }
+
+@keyframes button_flash{
+	from,to{opacity:1}
+	50%{opacity:0}
+	}
+.fill-btn {
+  	position: relative;
+ 	overflow: hidden;
+ 			padding: 12px 30px;
+            font-size: 50px;
+ 	color: #f59e0b;
+ 	border: 2px solid #f59e0b;
+    background: transparent;
+    cursor: pointer;
+    transition: color 0.4s ease; /* 讓文字顏色切換更平滑 */
+    font-weight: bold;
+	}
+
+.fill-btn::before {
+  	content: '';
+	position: absolute;
+ 	background-color: #f59e0b;
+ 	top: 0;
+ 	left: 0;
+ 	width: 0;
+ 	height: 100%;
+ 	transition: all 0.4s ease;
+ 	z-index: -1;
+	}
+
+.fill-btn:hover {
+ 	color: white;
+ 	animation: none;
+ 	opacity:1
+	}
+
+.fill-btn:hover::before {
+ 	 width: 100%;
+	}

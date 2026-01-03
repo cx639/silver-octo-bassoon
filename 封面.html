@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<style>
+		body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #1a1a1a;
+            font-family: sans-serif;
+        }
+        button{
+			animation: point-text 2s linear infinite;
+        }
+        @keyframes point-text{
+		from,to{opacity:1}
+		50%{opacity:0}
+		}
+		.fill-btn {
+  			position: relative;
+ 			overflow: hidden;
+ 			padding: 12px 30px;
+            font-size: 50px;
+ 			color: #f59e0b;
+ 			border: 2px solid #f59e0b;
+            background: transparent;
+            cursor: pointer;
+            transition: color 0.4s ease; /* 讓文字顏色切換更平滑 */
+            font-weight: bold;
+		}
+
+		.fill-btn::before {
+  			content: '';
+ 			position: absolute;
+ 			background-color: #f59e0b;
+ 			top: 0;
+ 			left: 0;
+ 			width: 0;
+ 			height: 100%;
+ 			transition: all 0.4s ease;
+ 			z-index: -1;
+		}
+		.fill-btn:hover {
+ 		 	color: white;
+ 		 	animation: none;
+ 		 	opacity:1
+		}
+		.fill-btn:hover::before {
+ 		 	width: 100%;
+		}
+	</style>
+</head>
+
+<body>
+	
+	<button class="fill-btn">點擊以進入遊戲</button>
+
+	<script>
+    const Button = document.querySelector(".fill-btn");
+
+    // 設定點擊事件
+    Button.addEventListener("click", function() {
+        window.location.href = "彈幕遊戲HTML.html";
+    });
+	</script>
+</body>
+</html>
